@@ -1,0 +1,16 @@
+{% extends 'Blogs/base.html' %}
+
+{% block explicit %}
+	
+	<div><a href="{% url 'logout' %}">LogOut</a></div>
+	<div>
+		<a href="{% url 'addpost' %}">Add A new Post</a>
+	</div>
+	{% for posts in post %}
+		<div>
+			<p>THIS POST BELONGS TO THE GENRE {{posts.genre}}</p>
+			<h2><a href="{% url 'post_edit' pk=posts.pk %}">{{posts.title}}</a></h2>
+			<p>{{posts.content| linebreaksbr}}</p>
+		</div>
+	{% endfor %}
+{% endblock %}

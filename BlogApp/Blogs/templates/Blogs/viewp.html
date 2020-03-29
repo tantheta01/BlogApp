@@ -1,0 +1,18 @@
+{% extends 'Blogs/base.html' %}
+
+{% block explicit %}
+
+
+<h2>Your results</h2>
+{% for post in posts %}
+<div>
+	<h3>{{post.title}}</h3>
+	<p>{{post.content| linebreaksbr}}</p>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block e2 %}
+<a href="{% url 'user_login' %}">Login</a>
+<a href="{% url 'register'}">Register</a>
+{% endblock %}

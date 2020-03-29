@@ -1,0 +1,18 @@
+{% extends 'Blogs/base.html' %}
+
+{% block explicit %}
+	<h1>
+		LOGIN TO VIEW AND EDIT YOUR BLOGS
+	</h1>
+	<div>
+		<form method="post">
+			{% csrf_token %}
+			<label for = "username">Username:</label>
+			<input type="text" name="username" placeholder="Username">
+			<label for="password">Password:</label>
+			<input type="password" name="password" placeholder="Password">
+			<input type="submit" name="" value="Login">
+		</form>
+	</div>
+
+{% endblock %}

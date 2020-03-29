@@ -1,0 +1,23 @@
+{% extends 'Blogs/base.html' %}
+
+{% block e2 %}
+<div>
+		<ul>
+			<li>
+				<a href="{% url 'user_login' %}">LOGIN</a>
+			</li>
+			<li>
+				<a href="{% url 'register' %}">REGISTER</a>
+			</li>
+			<li>
+				<h2>
+					Or search for a blog of your wish(Search by genre)
+				</h2>
+				<form method="POST">
+					{% csrf_token %}{{form.as_p}}
+					<button type="submit">Search</button>
+				</form>
+			</li>
+		</ul>
+	</div>
+{% endblock %}
